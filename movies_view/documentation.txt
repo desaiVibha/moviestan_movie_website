@@ -1,0 +1,95 @@
+Following are the Steps to run the movie react application:
+
+1. First and foremost, after getting the project folder from the GitHub repository, check whether node is installed in the 
+    system or not. To do so, open the terminal and type "node -v". If node js is installed, then it will show the version of it.
+    If it is not installed, then it should be downloaded from https://nodejs.org/en/download/package-manager website and 
+    installation instructions should be followed. By doing this "node_modules" folder will be added to the app.
+2. Please note down the versions of the packages installed in my application by visiting package.json file. For your reference,
+    I will be pasting the content of package.json file here:
+
+                    {
+                "name": "movies_view_app",
+                "version": "0.1.0",
+                "private": true,
+                "dependencies": {
+                    "@testing-library/jest-dom": "^5.17.0",
+                    "@testing-library/react": "^13.4.0",
+                    "@testing-library/user-event": "^13.5.0",
+                    "react": "^18.3.1",
+                    "react-dom": "^18.3.1",
+                    "react-router-dom": "^6.26.1",
+                    "react-scripts": "^3.0.1",
+                    "web-vitals": "^2.1.4"
+                },
+                "scripts": {
+                    "start": "react-scripts --openssl-legacy-provider start",
+                    "build": "react-scripts --openssl-legacy-provider build",
+                    "test": "react-scripts test",
+                    "eject": "react-scripts eject"
+                },
+                "eslintConfig": {
+                    "extends": [
+                    "react-app",
+                    "react-app/jest",
+                    "plugin:react/jsx-runtime"
+                    ]
+                },
+                "browserslist": {
+                    "production": [
+                    ">0.2%",
+                    "not dead",
+                    "not op_mini all"
+                    ],
+                    "development": [
+                    "last 1 chrome version",
+                    "last 1 firefox version",
+                    "last 1 safari version"
+                    ]
+                }
+                }
+            If there is any considerable mismatch in the versions, the application may not work as intended. 
+            That is the reason I have listed the versions that I have installed for this application.
+3. Navigate to 'movies_view_app' in the VSCode editor terminal and type the command 'npm start'. This should start the 
+    react application in the web browser. In my environment, the navigation is like this:
+    C:\Users\desai\OneDrive\Desktop\MoviesViewWebsite\movies_view\movies_view_app
+    Then enter the command npm start.
+4. Once the application is started, the user can see the landing page of the movie application which I have named as 'Movistan'
+    The user can scroll in the content area where all the movies are displayed. I have implemented the search function where 
+    the user can enter the movie name and if he/she clicks on the GO button, the filtered movie results are shown in 
+    the content area. The image, title, release year and the ratings(star) are shown for each movie. Now by clicking on the
+    Home link on the top, previous results are restored. 
+5. The user can mark the movie as his favorite movie by clicking on the black heart icon situated on the image on the top right.
+    Once the user clicks on the heart icon, the heart icon turns to red. If the user clicks on the movie which is already in
+    the favorite list, an alert message will be shown as this movie is already in the favorite list. I have implemented this using
+    browser local storage functions. 
+6. I have made the navigation bar and the search section as sticky so that the user can scroll through the movie content section only.
+7. I have taken the screenshots of the different states of the application which you can see in the screenshots folder of this
+    application. 
+
+Design Decisions:
+1. I have used React library to create the movie application for 2 reasons:
+    i. It is easy to develop an application using React library and I had taken the training of developing the application
+        using React
+    ii. React has component based architecture and I can visualize the application in terms of components and design the 
+        whole application.It has systematic approach and well defined folder structure to ease the development process.
+2. The application requirement mentioned in the description needs only a single home page. That's the reason I have created
+    pages folder and created only Home component in that.
+3. This Home page has different components which I have added in the components folder and they are NavBar, SearchBar,DisplayMovie,
+    MovieCard and Star.
+4. I am rendering all these components in the Home page. And I have used conditional rendering in the DisplayMovie component to 
+    display either all movies or those movies that are searched for. 
+5. The additional feature of showing the stars for ratings is implemented in the application using Star component and rendering 
+    it in the MovieCard component.
+6. The API call to TMDb is made in the DisplayMovie component and after successfully getting the results, each movie is displayed
+    here again by rendering MovieCard component by passing the results as props to it. I have used map function to pass one result
+    in each iteration to the MovieCard component.    
+
+Possible improvements in the implementation:
+1. Due to the deadline mentioned in the mail, I couldn't implement the advanced search functions functionality. If I am given
+    an extension in the deadline, I will be able to do it. However, I have designed the interface for it. But it is non-functional 
+    right now.
+2. Infinite scrolling is a new concept for me and again I need extra time to learn and implement in the application.
+3. I can even implement sign in and log in functionalities for tracking the user's interests. 
+4. Advanced CSS can be written to make the buttons more appealing and respond to the user in different styles. 
+5. I can even show the details of the movie if it is clicked on. 
+6. The responsive function implemetation can be done by me for my application to look better in all screens.  
